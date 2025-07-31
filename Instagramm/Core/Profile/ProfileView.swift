@@ -30,7 +30,7 @@ struct ProfileView: View {
                         Spacer()
                         //name
                         VStack(alignment: .leading, spacing: 8) {
-                            Text("Ikbal Demirdovennn")
+                            Text("Ikbal Demirdoven")
                                 .fontWeight(.semibold)
                             //stats
                             HStack {
@@ -49,10 +49,7 @@ struct ProfileView: View {
                     .padding(.leading)
                     //bio
                     HStack(spacing: 4) {
-                        Image("facebook_small_icon")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 20, height: 20)
+                        Image(systemName: "f.cursive.circle")
                         Text("Ikbal Demirdoven")
                             .fontWeight(.semibold)
                     }
@@ -111,7 +108,51 @@ struct ProfileView: View {
                     }
                 }
             }
-            .navigationTitle("ikbaldemirdoven")
+            //toolbar
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        
+                    } label: {
+                        HStack(spacing: 5) {
+                            Image(systemName: "lock")
+                                .imageScale(.small)
+                            Text("ikbaldemirdoven")
+                                .fontWeight(.semibold)
+                            Image(systemName: "chevron.down")
+                                .imageScale(.small)
+                        }
+                        .foregroundStyle(colorScheme == .dark ? .white : .black)
+                    }
+                }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "pencil.and.outline")
+                            .foregroundStyle(colorScheme == .dark ? .white : .black)
+                            .imageScale(.large)
+                    }
+                }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "plus.app")
+                            .foregroundStyle(colorScheme == .dark ? .white : .black)
+                            .imageScale(.large)
+                    }
+                }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "line.3.horizontal")
+                            .foregroundStyle(colorScheme == .dark ? .white : .black)
+                            .imageScale(.large)
+                    }
+                }
+            }
         }
     }
 }
