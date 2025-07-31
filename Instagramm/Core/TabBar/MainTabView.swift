@@ -11,7 +11,7 @@ struct MainTabView: View {
     var body: some View {
         TabView {
             Tab("", systemImage: "house") {
-                
+                FeedView()
             }
             Tab("", systemImage: "magnifyingglass") {
                 
@@ -19,10 +19,10 @@ struct MainTabView: View {
             Tab("", systemImage: "plus.square") {
                 
             }
-            Tab("", systemImage: "heart") {
+            Tab("", systemImage: "play.square") {
                 
             }
-            Tab("", systemImage: "person") {
+            Tab("", systemImage: "person.crop.circle") {
                 ProfileView()
             }
         }

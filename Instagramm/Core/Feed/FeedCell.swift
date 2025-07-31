@@ -18,9 +18,13 @@ struct FeedCell: View {
                     .scaledToFill()
                     .frame(width: 40, height: 40)
                     .clipShape(Circle())
-                Text("ikbaldemirdoven")
-                    .font(.footnote)
-                    .fontWeight(.semibold)
+                VStack(alignment: .leading, spacing: 1) {
+                    Text("ikbaldemirdoven")
+                        .font(.footnote)
+                        .fontWeight(.semibold)
+                    Text("Vancouver, BC")
+                        .font(.footnote)
+                }
                 Spacer()
                 Image(systemName: "ellipsis")
             }
@@ -44,7 +48,7 @@ struct FeedCell: View {
                     
                 } label: {
                     Image(systemName: "bubble.right")
-
+                    
                 }
                 Text("85")
                     .padding(.leading, -5)
@@ -66,9 +70,37 @@ struct FeedCell: View {
             .padding(.horizontal)
             .foregroundStyle(colorScheme == .dark ? .white : .black)
             //likes label
-            Text("Liked by")
+            HStack(spacing: 2) {
+                Text("Liked by")
+                Text("ikbaldemirdoven")
+                    .bold()
+                Text("and")
+                Text("others")
+                    .bold()
+                Spacer()
+            }
+            .font(.footnote)
+            .padding(.leading)
             //caption
+            HStack {
+                Text("ikbaldemirdoven ")
+                    .bold()
+                +
+                Text("Some test captions...")
+                Spacer()
+            }
+            .font(.footnote)
+            .padding(.leading)
+            //timestamp
+            HStack {
+                Text("6 hours ago")
+                    .foregroundStyle(.gray)
+                    .font(.footnote)
+                Spacer()
+            }
+            .padding(.leading)
         }
+        .padding(.top, 30)
     }
 }
 
