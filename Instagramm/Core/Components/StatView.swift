@@ -7,18 +7,18 @@
 
 import SwiftUI
 
-struct SwiftUIView: View {
+struct StatView: View {
     var stat : Int
-    var text : String
+    var title : String
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             Text("\(stat)")
                 .fontWeight(.semibold)
-            Text(text)
+            Text(title)
         }
     }
 }
 
 #Preview {
-    SwiftUIView()
+    StatView(stat: 68, title: "posts")
 }

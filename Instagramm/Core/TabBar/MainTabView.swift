@@ -23,7 +23,7 @@ struct MainTabView: View {
                 
             }
             Tab("", systemImage: "person") {
-                
+                ProfileView()
             }
         }
         .tint(.black)
