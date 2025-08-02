@@ -26,18 +26,18 @@ struct SearchView: View {
                     .bold()
                     .padding(.horizontal)
                     .padding(.bottom)
-                    ForEach(0...20, id: \.self) {
+                    ForEach(User.MOCK_USERS) {
                         user in
                         HStack {
-                            Image("ikbal")
+                            Image(user.profileImageURL ?? "")
                                 .resizable()
                                 .scaledToFill()
                                 .frame(width: 40, height: 40)
                                 .clipShape(Circle())
                             VStack(spacing: 2) {
-                                Text("ikbaldemirdoven")
+                                Text(user.username)
                                     .bold()
-                                Text("Ikbal Demirdoven")
+                                Text(user.fullname)
                             }
                             .font(.footnote)
                             Spacer()
