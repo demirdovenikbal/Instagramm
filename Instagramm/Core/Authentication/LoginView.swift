@@ -18,19 +18,13 @@ struct LoginView: View {
                 Image("instagramtextlogo")
                     .resizable()
                     .scaledToFill()
-                    .frame(width: 220, height: 100)
+                    .frame(width: 150, height: 70)
                 VStack {
                     TextField("Enter your email", text: $email)
+                        .modifier(TextFieldModifier())
                         .textInputAutocapitalization(.never)
-                        .font(.subheadline)
-                        .padding(12)
-                        .background(Color(.systemGray6))
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
                     SecureField("Password", text: $password)
-                        .font(.subheadline)
-                        .padding(12)
-                        .background(Color(.systemGray6))
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .modifier(TextFieldModifier())
                 }
                 .padding(.horizontal)
                 HStack {
@@ -49,13 +43,7 @@ struct LoginView: View {
                     
                 } label: {
                     Text("Login")
-                        .font(.subheadline)
-                        .fontWeight(.semibold)
-                        .foregroundStyle(.white)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(.blue)
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .modifier(ButtonModifier())
                 }
                 .padding()
                 
@@ -83,7 +71,8 @@ struct LoginView: View {
                 Spacer()
                 Divider()
                 NavigationLink {
-                    Text("Sign up")
+                    AddEmailView()
+                        .navigationBarBackButtonHidden()
                 } label: {
                     HStack {
                         Text("Don't have an account?")
