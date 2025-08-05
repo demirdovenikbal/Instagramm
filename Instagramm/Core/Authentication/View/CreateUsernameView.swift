@@ -1,5 +1,5 @@
 //
-//  CreatePasswordView.swift
+//  CreateUsernameView.swift
 //  Instagramm
 //
 //  Created by Ikbal Demirdoven on 2025-08-02.
@@ -7,25 +7,25 @@
 
 import SwiftUI
 
-struct CreatePasswordView: View {
-    @State private var password = ""
-    @Environment(\.colorScheme) var colorScheme
+struct CreateUsernameView: View {
+    @State private var username = ""
     @Environment(\.dismiss) var dismiss
+    @Environment(\.colorScheme) var colorScheme
     var body: some View {
         VStack {
-            Text("Create a password")
+            Text("Create a username")
                 .font(.title2)
                 .fontWeight(.semibold)
                 .padding(.top)
-            Text("Your password must be at least 6 characters in length")
+            Text("You'll use this username to log into your account")
                 .foregroundStyle(.gray)
                 .font(.footnote)
                 .multilineTextAlignment(.center)
-            SecureField("Password", text: $password)
+            TextField("Username", text: $username)
                 .textInputAutocapitalization(.never)
                 .modifier(TextFieldModifier())
             NavigationLink {
-                WelcomePageView()
+                CreatePasswordView()
                     .navigationBarBackButtonHidden()
             } label: {
                 Text("Next")
@@ -50,5 +50,5 @@ struct CreatePasswordView: View {
 }
 
 #Preview {
-    CreatePasswordView()
+    CreateUsernameView()
 }
